@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Backbone Todo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section id="app">
+        <header>
+            <h1>Tasks</h1>
+            <input id="new" placeholder="Your task">
+        </header>
+
+        <section id="main">
+            <ul id="list"></ul>
+        </section>
+    </section>
+    
+    <script type="text/template" id="item-template">
+        <div class="view">
+            <input type="checkbox" class='toggle' <%= done ? 'checked' : '' %>>
+            <label><%- title %></label>
+            <button class='destory'>&times;</button>
+        </div>
+    </script>
+    
+    <script src="jquery.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
+    <script src="app.js"></script>
+    
+    <script>
+        $(function() {
+            new app.AppView();
+        });
+    </script>
+</body>
+</html>
