@@ -1,4 +1,4 @@
-var app = app || {};
+var app = {};
 
 // Model
 app.Todo = Backbone.Model.extend({
@@ -25,10 +25,6 @@ var TodoList = Backbone.Collection.extend({
             return 1;
         }
         return this.last().get('order') + 1;
-    },
-    
-    comparator: function( todo ) {
-        return todo.get('order');
     }
 });
 
